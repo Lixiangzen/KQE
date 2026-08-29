@@ -52,8 +52,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 StudyUiState(
                     book = book,
                     learnedCount = learned.size,
-                    todayCompleted = if (reset) 0 else entity.todayCompleted,
-                    todayWrong = if (reset) 0 else entity.todayWrong,
+                    todayCompleted = if (reset) 0 else entity?.todayCompleted ?: 0,
+                    todayWrong = if (reset) 0 else entity?.todayWrong ?: 0,
                     totalWords = total
                 )
             }

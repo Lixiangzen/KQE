@@ -1,24 +1,38 @@
 package com.kqe.english.ui.components
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ArrowBack
+import androidx.compose.material.icons.outlined.Bolt
+import androidx.compose.material.icons.outlined.Check
+import androidx.compose.material.icons.outlined.DeleteOutline
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.KeyboardArrowDown
+import androidx.compose.material.icons.outlined.KeyboardArrowUp
+import androidx.compose.material.icons.outlined.Menu
+import androidx.compose.material.icons.outlined.MenuBook
+import androidx.compose.material.icons.outlined.PlayArrow
+import androidx.compose.material.icons.outlined.Refresh
+import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.VolumeUp
 import androidx.compose.ui.graphics.vector.ImageVector
 
 /**
  * 统一图标集：全部采用白色线性（Outlined）图标，符合 TSC 视觉规范。
- * 使用完全限定名避免与对象属性命名冲突。
  */
 object AppIcons {
-    val ArrowBack: ImageVector get() = androidx.compose.material.icons.automirrored.outlined.ArrowBack
-    val Menu: ImageVector get() = androidx.compose.material.icons.outlined.Menu
-    val MenuBook: ImageVector get() = androidx.compose.material.icons.outlined.MenuBook
-    val Bolt: ImageVector get() = androidx.compose.material.icons.outlined.Bolt
-    val Settings: ImageVector get() = androidx.compose.material.icons.outlined.Settings
-    val Info: ImageVector get() = androidx.compose.material.icons.outlined.Info
-    val Search: ImageVector get() = androidx.compose.material.icons.outlined.Search
-    val VolumeUp: ImageVector get() = androidx.compose.material.icons.outlined.VolumeUp
-    val Check: ImageVector get() = androidx.compose.material.icons.outlined.Check
-    val PlayArrow: ImageVector get() = androidx.compose.material.icons.outlined.PlayArrow
-    val ArrowUp: ImageVector get() = androidx.compose.material.icons.outlined.KeyboardArrowUp
-    val ArrowDown: ImageVector get() = androidx.compose.material.icons.outlined.KeyboardArrowDown
-    val Delete: ImageVector get() = androidx.compose.material.icons.outlined.DeleteOutline
-    val Refresh: ImageVector get() = androidx.compose.material.icons.outlined.Refresh
+    val ArrowBack: ImageVector get() = Icons.AutoMirrored.Outlined.ArrowBack
+    val Menu: ImageVector get() = Icons.Outlined.Menu
+    val MenuBook: ImageVector get() = Icons.Outlined.MenuBook
+    val Bolt: ImageVector get() = Icons.Outlined.Bolt
+    val Settings: ImageVector get() = Icons.Outlined.Settings
+    val Info: ImageVector get() = Icons.Outlined.Info
+    val Search: ImageVector get() = Icons.Outlined.Search
+    val VolumeUp: ImageVector get() = Icons.Outlined.VolumeUp
+    val Check: ImageVector get() = Icons.Outlined.Check
+    val PlayArrow: ImageVector get() = Icons.Outlined.PlayArrow
+    val ArrowUp: ImageVector get() = Icons.Outlined.KeyboardArrowUp
+    val ArrowDown: ImageVector get() = Icons.Outlined.KeyboardArrowDown
+    val Delete: ImageVector get() = Icons.Outlined.DeleteOutline
+    val Refresh: ImageVector get() = Icons.Outlined.Refresh
 }
