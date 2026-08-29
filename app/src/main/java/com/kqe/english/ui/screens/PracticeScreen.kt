@@ -109,7 +109,12 @@ fun PracticeScreen(
             onBack = onBack,
             actions = {
                 Column {
-                    IconButton(AppIcons.ArrowUp, size = 32.dp, onClick = { questions.getOrNull(currentIndex)?.word?.let { tts.speak(it.en) } })
+                    IconButton(AppIcons.ArrowUp, size = 32.dp, onClick = {
+                        if (currentIndex > 0) {
+                            currentIndex--
+                            selected = -1
+                        }
+                    })
                     Spacer(Modifier.height(2.dp))
                     IconButton(AppIcons.ArrowDown, size = 32.dp, onClick = {
                         if (currentIndex < questions.size - 1) {

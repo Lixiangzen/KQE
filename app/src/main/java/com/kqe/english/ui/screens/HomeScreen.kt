@@ -153,7 +153,7 @@ fun HomeScreen(
                     KqeProgressBar(progress = if (goal > 0) done.toFloat() / goal else 0f)
                     Spacer(Modifier.height(14.dp))
                     Text(
-                        if (remain <= 0) "今日任务已完成🎉" else "今日还剩 $remain 个单词，加油😊",
+                        if (remain <= 0) "已完成当日任务" else "今日还剩 $remain 个单词，加油😊",
                         color = White,
                         fontSize = 15.sp,
                         modifier = Modifier.fillMaxWidth(),
@@ -166,12 +166,11 @@ fun HomeScreen(
 
             Spacer(Modifier.weight(1f))
 
-            // 底部主按钮
-            val todayDone = done >= dailyGoal
+            // 底部主按钮（任务完成后仍可继续学习）
             PrimaryButton(
-                text = if (todayDone) "今日已完成" else "继续学习",
-                icon = if (todayDone) null else AppIcons.PlayArrow,
-                enabled = !todayDone,
+                text = "继续学习",
+                icon = AppIcons.PlayArrow,
+                enabled = true,
                 onClick = onPractice,
                 modifier = Modifier.padding(horizontal = 20.dp, vertical = 16.dp)
             )
