@@ -1,0 +1,9 @@
+<resources>
+    <!-- 启动主题：深色背景，避免启动白屏闪烁；实际 UI 由 Compose 绘制 -->
+    <style name="Theme.KqeEnglish" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#0A0F1E</item>
+        <item name="android:statusBarColor">#0A0F1E</item>
+        <item name="android:navigationBarColor">#0A0F1E</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
