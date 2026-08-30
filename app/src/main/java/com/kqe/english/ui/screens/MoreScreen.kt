@@ -4,8 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -32,7 +35,12 @@ fun MoreScreen(
     ) {
         KqeTopBar(title = "更多功能", onBack = onBack)
 
-        Column(Modifier.padding(horizontal = 20.dp, vertical = 8.dp)) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 20.dp, vertical = 8.dp)
+        ) {
             FeatureCard(AppIcons.MenuBook, "词典", "查询任意单词释义与发音", onClick = onDictionary)
             Spacer(Modifier.height(16.dp))
             FeatureCard(AppIcons.Bolt, "无尽练习", "不限量随机刷题，双模式", onClick = onEndless)

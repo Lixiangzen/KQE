@@ -162,18 +162,17 @@ fun HomeScreen(
                 }
 
                 Spacer(Modifier.height(16.dp))
+
+                // 继续学习按钮（整合在内容流中，小屏滚动可见）
+                PrimaryButton(
+                    text = "继续学习",
+                    icon = AppIcons.PlayArrow,
+                    enabled = true,
+                    onClick = onPractice
+                )
+
+                Spacer(Modifier.height(20.dp))
             }
-
-            Spacer(Modifier.weight(1f))
-
-            // 底部主按钮（任务完成后仍可继续学习）
-            PrimaryButton(
-                text = "继续学习",
-                icon = AppIcons.PlayArrow,
-                enabled = true,
-                onClick = onPractice,
-                modifier = Modifier.padding(horizontal = 20.dp, vertical = 16.dp)
-            )
         }
     }
 }
