@@ -3,6 +3,7 @@ package com.kqe.english.ui.components
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
@@ -30,6 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -37,6 +39,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kqe.english.ui.theme.BrandBlue
+import com.kqe.english.ui.theme.CardHighlight
 import com.kqe.english.ui.theme.GrayBlue
 import com.kqe.english.ui.theme.Navy700
 import com.kqe.english.ui.theme.Navy800
@@ -86,7 +89,8 @@ fun IconButton(
             modifier = Modifier
                 .fillMaxSize()
                 .clip(RoundedCornerShape(12.dp))
-                .background(if (pressed) Navy700 else Navy800),
+                .background(if (pressed) Navy700 else Navy800)
+                .border(1.dp, CardHighlight, RoundedCornerShape(12.dp)),
             contentAlignment = Alignment.Center
         ) {
             Icon(icon, contentDescription, tint = White, modifier = Modifier.size(size * 0.5f))
@@ -221,3 +225,12 @@ fun VDivider() {
             .background(ProgressTrack)
     )
 }
+
+/**
+ * 卡片统一表面：深藏青背景 + 柔和边缘高光，形成自然过渡（不刺眼）。
+ */
+fun Modifier.cardSurface(shape: Shape): Modifier = this
+    .clip(shape)
+    .background(Navy800)
+    .border(1.dp, CardHighlight, shape)
+

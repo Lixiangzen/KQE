@@ -34,12 +34,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kqe.english.MainViewModel
 import com.kqe.english.data.Word
+import com.kqe.english.ui.components.cardSurface
 import com.kqe.english.ui.components.AppIcons
 import com.kqe.english.ui.components.IconButton
 import com.kqe.english.ui.components.KqeTopBar
 import com.kqe.english.ui.components.PressableContainer
 import com.kqe.english.ui.components.PrimaryButton
 import com.kqe.english.ui.theme.BrandBlue
+import com.kqe.english.ui.theme.CardHighlight
 import com.kqe.english.ui.theme.CorrectBg
 import com.kqe.english.ui.theme.CorrectBorder
 import com.kqe.english.ui.theme.DangerRed
@@ -184,8 +186,7 @@ fun EndlessScreen(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(20.dp))
-                    .background(Navy800)
+                    .cardSurface(RoundedCornerShape(20.dp))
                     .padding(vertical = 32.dp, horizontal = 20.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -265,7 +266,7 @@ private fun EndlessOption(
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(14.dp))
                 .background(effectiveBg)
-                .then(border?.let { Modifier.border(2.dp, it, RoundedCornerShape(14.dp)) } ?: Modifier)
+                .then(border?.let { Modifier.border(2.dp, it, RoundedCornerShape(14.dp)) } ?: Modifier.border(1.dp, CardHighlight, RoundedCornerShape(14.dp)))
                 .padding(vertical = 18.dp, horizontal = 16.dp),
             contentAlignment = Alignment.Center
         ) {

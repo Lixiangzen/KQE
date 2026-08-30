@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kqe.english.data.WordBook
 import com.kqe.english.ui.theme.BrandBlue
+import com.kqe.english.ui.theme.CardHighlight
 import com.kqe.english.ui.theme.GrayBlue
 import com.kqe.english.ui.theme.Navy700
 import com.kqe.english.ui.theme.Navy800
@@ -47,7 +48,7 @@ fun WordBookCard(
                 .background(bg)
                 .then(
                     if (selected) Modifier.border(2.dp, BrandBlue, RoundedCornerShape(18.dp))
-                    else Modifier
+                    else Modifier.border(1.dp, CardHighlight, RoundedCornerShape(18.dp))
                 )
                 .padding(horizontal = 20.dp, vertical = 22.dp)
         ) {
@@ -95,6 +96,7 @@ fun FeatureCard(
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(18.dp))
                 .background(bg)
+                .border(1.dp, CardHighlight, RoundedCornerShape(18.dp))
                 .padding(horizontal = 20.dp, vertical = 18.dp)
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {

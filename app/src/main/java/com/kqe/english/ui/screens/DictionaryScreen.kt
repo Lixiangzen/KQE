@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kqe.english.MainViewModel
 import com.kqe.english.data.Word
+import com.kqe.english.ui.components.cardSurface
 import com.kqe.english.ui.components.AppIcons
 import com.kqe.english.ui.components.IconButton
 import com.kqe.english.ui.components.KqeTopBar
@@ -118,8 +119,7 @@ private fun WordItem(word: Word, onSpeak: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(18.dp))
-            .background(Navy800)
+            .cardSurface(RoundedCornerShape(18.dp))
             .padding(horizontal = 20.dp, vertical = 18.dp)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {

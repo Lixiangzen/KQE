@@ -26,6 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kqe.english.MainViewModel
+import com.kqe.english.ui.components.cardSurface
 import com.kqe.english.ui.components.AppIcons
 import com.kqe.english.ui.components.IconButton
 import com.kqe.english.ui.components.KqeProgressBar
@@ -99,8 +100,7 @@ fun HomeScreen(
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(RoundedCornerShape(20.dp))
-                        .background(Navy800)
+                        .cardSurface(RoundedCornerShape(20.dp))
                         .padding(horizontal = 20.dp, vertical = 28.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -128,8 +128,7 @@ fun HomeScreen(
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(RoundedCornerShape(20.dp))
-                        .background(Navy800)
+                        .cardSurface(RoundedCornerShape(20.dp))
                         .padding(horizontal = 20.dp, vertical = 24.dp)
                 ) {
                     Text(

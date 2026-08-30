@@ -18,6 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kqe.english.ui.components.cardSurface
 import com.kqe.english.ui.components.KqeLogo
 import com.kqe.english.ui.components.KqeTopBar
 import com.kqe.english.ui.theme.GrayBlue
@@ -55,8 +56,7 @@ fun AboutScreen(onBack: () -> Unit) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(20.dp))
-                    .background(Navy800)
+                    .cardSurface(RoundedCornerShape(20.dp))
                     .padding(20.dp)
             ) {
                 Text("应用简介", color = GrayBlue, fontSize = 14.sp)

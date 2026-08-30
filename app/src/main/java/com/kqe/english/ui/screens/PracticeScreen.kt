@@ -36,12 +36,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kqe.english.MainViewModel
 import com.kqe.english.data.Word
+import com.kqe.english.ui.components.cardSurface
 import com.kqe.english.ui.components.AppIcons
 import com.kqe.english.ui.components.IconButton
 import com.kqe.english.ui.components.KqeTopBar
 import com.kqe.english.ui.components.PressableContainer
 import com.kqe.english.ui.components.PrimaryButton
 import com.kqe.english.ui.theme.BrandBlue
+import com.kqe.english.ui.theme.CardHighlight
 import com.kqe.english.ui.theme.CorrectBg
 import com.kqe.english.ui.theme.CorrectBorder
 import com.kqe.english.ui.theme.DangerRed
@@ -165,8 +167,7 @@ fun PracticeScreen(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(20.dp))
-                    .background(Navy800)
+                    .cardSurface(RoundedCornerShape(20.dp))
                     .padding(vertical = 32.dp, horizontal = 20.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -214,25 +215,27 @@ fun PracticeScreen(
             if (answered && selected != q.correctIndex) {
                 Spacer(Modifier.height(4.dp))
                 AnswerCard(word = q.word, onSpeak = { tts.speak(q.word.en) })
-                Spacer(Modifier.height(16.dp))
             }
-        }
 
-        // 底部下一题按钮
-        PrimaryButton(
-            text = if (currentIndex < questions.size - 1) "下一题" else "完成练习",
-            enabled = answered,
-            onClick = {
-                if (currentIndex < questions.size - 1) {
-                    currentIndex++
-                    selected = -1
-                } else {
-                    onBack()
-                }
-            },
-            modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp),
-            height = 52.dp
-        )
+            Spacer(Modifier.height(16.dp))
+
+            // 下一题按钮（紧跟选项/答案卡，随内容滚动）
+            PrimaryButton(
+                text = if (currentIndex < questions.size - 1) "下一题" else "完成练习",
+                enabled = answered,
+                onClick = {
+                    if (currentIndex < questions.size - 1) {
+                        currentIndex++
+                        selected = -1
+                    } else {
+                        onBack()
+                    }
+                },
+                height = 52.dp
+            )
+
+            Spacer(Modifier.height(16.dp))
+        }
     }
 }
 
@@ -267,7 +270,7 @@ private fun OptionCard(
                 .then(
                     borderColor?.let {
                         Modifier.border(2.dp, it, RoundedCornerShape(14.dp))
-                    } ?: Modifier
+                    } ?: Modifier.border(1.dp, CardHighlight, RoundedCornerShape(14.dp))
                 )
                 .padding(vertical = 18.dp, horizontal = 16.dp),
             contentAlignment = Alignment.Center
@@ -288,8 +291,7 @@ private fun AnswerCard(word: Word, onSpeak: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .background(Navy800)
+            .cardSurface(RoundedCornerShape(16.dp))
             .border(1.5.dp, WrongBorder, RoundedCornerShape(16.dp))
             .padding(20.dp)
     ) {

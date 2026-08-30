@@ -34,6 +34,7 @@ import com.kqe.english.ui.components.KqeTopBar
 import com.kqe.english.ui.components.PressableContainer
 import com.kqe.english.ui.components.WordBookCard
 import com.kqe.english.ui.theme.BrandBlue
+import com.kqe.english.ui.theme.CardHighlight
 import com.kqe.english.ui.theme.DangerRed
 import com.kqe.english.ui.theme.GrayBlue
 import com.kqe.english.ui.theme.Ink900
@@ -104,6 +105,7 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(14.dp))
                         .background(if (pressed) Navy700 else Navy800)
+                        .border(1.dp, CardHighlight, RoundedCornerShape(14.dp))
                         .padding(vertical = 16.dp),
                     contentAlignment = Alignment.Center
                 ) {
@@ -153,6 +155,10 @@ private fun GoalButton(
                         pressed -> Navy700
                         else -> Navy800
                     }
+                )
+                .then(
+                    if (selected) Modifier
+                    else Modifier.border(1.dp, CardHighlight, RoundedCornerShape(12.dp))
                 )
                 .padding(vertical = 14.dp),
             contentAlignment = Alignment.Center
